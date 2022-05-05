@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- CSS de Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+            :root {
+              --bs-body-font-family: "Josefin sans", sans-serif;
+              --bs-body-color:#f7f7e6;
+                --bs-body-bg: #030114
+            }
+            body {
+            background-image: url(https://picsum.photos/id/238/2560/1440/?blur=6);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: auto;
+            }
+        </style>
+        <title>Introducción al Desarrollo Front End con HTML, CSS y JavaScript</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                        <h1 class="display-4 text-center py-2">Hate crimes in New York city</h1>
+                        <p class="lead">Hate crimes are is a prejudice-motivated crime which occurs when a perpetrator targets a victim because of their membership (or perceived membership) of a certain social group or racial demographic. .</p>
+                        <p>New york is a very diverse city, people from diferent ethnicities, sexual orientation, genre, and religious beliefs coexits in this space, but that coexistence is not always peaceful</p>
+                        <p>The records of  <a href="https://github.com/catalina1699/csv/blob/main/Hoja%20de%20c%C3%A1lculo%20sin%20t%C3%ADtulo%20-%20Hoja%201.csv" target="_blank" class="link-light">the hate crimes commited in 2020</a> we can get the following data</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        div class="container">
+
+                <main class="container">
+                    <div class="accordion mx-md-5 my-5 rounded-0" id="accordionExample">
+                        <!--Edades de pasajeros-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header bg-dark" id="headingOne">
+                                <button class="accordion-button rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">ethnicities</button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p>
+                                      The NYC population is composed of the following ethnicities in these percentages
+                                    </p>
+                                    <div class="col-md-6 mx-auto mb-3">
+                                        <canvas id="primerCan" width="100" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Pasajeras y pasajeros-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Sexual Orientation</button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p>Of the total population of NYC a total of 570,000 self-identify as gay or bisexual</p>
+                                    <div class="col-md-6 mx-auto mb-3">
+                                        <canvas id="segundoCab" width="100" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Clases-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Victims of Hate crimes</button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p> These are the diferent groups who are targeted by Hate Crimes, each group is targetes in a different extent
+
+                                    </p>
+                                    <div class="col-md-6 mx-auto mb-3">
+                                        <canvas id="victims" width="100" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Sobrevivientes por clases-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Perpetrators by Age</button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p>
+                                        The information of the perpetrators is organized by age groups.
+                                    </p>
+                                    <canvas id="age" width="100" height="30"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Mujeres y niños primero-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Perpetrators by Genre</button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p>The information of the perpetrators is organized by genre.</p>
+                                    <canvas id="genre" width="100" height="30"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Extra-->
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFive">Perpetrators by ethnicities</button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-black-50">
+                                    <p>The information of the perpetrators is ordered by ethnicities</p>
+                                    <canvas id="last" width="100" height="50"></canvas>
+
+                            </div>
+                            </div>
+                        </div>
+                        <!--Fin-->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                            <p>If you want to know more about this theme you can visit...</p>
+                        </div>
+                    </div>
+                </main>
+
+                <aside>
+                    <div class="container">
+                        <div class="row py-5">
+                            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto small text-center">
+                                <p>
+                                    Fuentes: <a href="https://historia.nationalgeographic.com.es/a/historia-titanic-tragedia-barco-insumergible_16344">La historia del Titanic, la tragedia del barco insumergible</a>,
+                                    <a href="https://rpubs.com/paraneda/titanic">RPubs - Titanic</a>, otra y otra más.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col"><p class="text-muted mt-5 text-center small">Bootstrap v5.1 y Charts.js</p></div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Biblioteca de Bootstrap -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                <!-- Biblioteca Chart.js -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+                    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+                    crossorigin="anonymous"
+                    referrerpolicy="no-referrer"
+                ></script>
+                <!-- Un gran script, que contiene una función asincrónica para ir a buscar un JSON con -->
+                <script>
+                    async function todo() {
+                        //el fetch
+                        const consulta = await fetch("https://raw.githubusercontent.com/catalina1699/json_clase8/main/datos.json");
+                        const data = await consulta.json();
+                        //algunas variables para calcular
+
+                        var female = 0;
+                        var male = 0;
+                        //variables para calcular las victimas
+                        var gay_people = 0;
+                        var transgender_people = 0;
+                        var jewish_people = 0;
+                        var black_people = 0;
+                        var asian_people = 0;
+                        var muslim_people =0;
+                        var women = 0;
+                        //age groups
+                        var underage = 0;
+                        var twenty_years = 0;
+                        var thirty_years = 0;
+                        var forty_years = 0;
+                        var fifty_years = 0;
+                        var sixty_years = 0;
+                        var seventy_years = 0;
+                        //ethnicities
+                        var white = 0;
+                        var black = 0;
+                        var latin = 0;
+                        var asian = 0;
+                        var nativeAmerican = 0;
+
+
+                        //consultando en cada elemento del arreglo
+                        data.forEach((d) => {
+                            //separo sexos
+                            if (d.Sex == "female") {
+                                female = female + 1;
+                            } else {
+                                male = male + 1;
+                            }
+                            //calculo clases
+
+                            //calculo sobrevivientes
+
+                            //Sobrevivientes por sexo
+
+
+                            //vivos o muertos por clase
+
+
+                            //vivos o muertos por edad y sexo
+
+
+
+                        //y completemos un par de frase
+
+
+                        //gráficar edadesreales
+
+
+                        new Chart(document.getElementById("primerCan").getContext("2d"), {
+                            type: "pie",
+                            data: {
+                                labels: ["White","Hispanic or latino","Black","Asian","Native American"],
+                                datasets: [{ data: [31, 29, 20, 15, 1], label: "Composition of NYC population", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7"] }],
+                            },
+                            options: {
+                                animation: true,
+                                layout: {
+                                    padding: 10,
+                                },
+                            },
+                        });
+
+                        //hombres y mujeres
+                        new Chart(document.getElementById("s").getContext("2d"), {
+                            type: "doughnut",
+                            data: {
+                                labels: [],
+                                datasets: [{ data: [mujeres, hombres], label: "Sexo", backgroundColor: ["#8856a7", "#495F8F"] }],
+                            },
+                            options: {
+                                animation: false,
+                                layout: {
+                                    padding: 10,
+                                },
+                            },
+                        });
+
+                        // clases
+                        new Chart(document.getElementById("clasista").getContext("2d"), {
+                            type: "doughnut",
+                            data: {
+                                labels: ["Primera clase", "Segunda clase", "Tercera clase"],
+                                datasets: [{ data: [cuantosPrimera, cuantosSegunda, cuantosTercera], label: "Clases titanic", backgroundColor: ["#D9B4B2", "#9EBCDA", "#495F8F"] }],
+                            },
+                            options: {
+                                animation: false,
+                                layout: {
+                                    padding: 10,
+                                },
+                            },
+                        });
+
+                        //sobrevivientes y muertes por clase
+                        new Chart(document.getElementById("sobreviven").getContext("2d"), {
+                            type: "bar",
+                            data: {
+                                labels: ["Primera clase", "Segunda Clase", "Tercera Clase"],
+                                datasets: [
+                                    { data: [vivosPrimera, vivosSegunda, vivosTercera], label: "Sobreviven", backgroundColor: ["#8CB1E5"] },
+                                    { data: [muertosPrimera, muertosSegunda, muertosTercera], label: "Mueren", backgroundColor: ["#334"] },
+                                ],
+                            },
+                            options: {
+                                indexAxis: "y",
+                                animation: false,
+                                layout: {
+                                    padding: 10,
+                                },
+                            },
+                        });
+
+                        //sobrevivientes y muertes por edad y sexo (mujeres y niños primero)
+                        new Chart(document.getElementById("porsexo").getContext("2d"), {
+                            type: "bar",
+                            data: {
+                                labels: ["Mujeres", "Niños", "Hombres"],
+                                datasets: [
+                                    { data: [mujeresSalvadas, ninesSalvades, hombresSalvados], label: "Sobreviven", backgroundColor: ["#8CB1E5"] },
+                                    { data: [mujeresMuertas, ninesMuertes, hombresMuertos], label: "Mueren", backgroundColor: ["#334"] },
+                                ],
+                            },
+                            options: {
+                                indexAxis: "y",
+                                animation: false,
+                                layout: {
+                                    padding: 10,
+                                },
+                            },
+                        });
+                    }
+                    todo().catch((error) => console.error(error));
+                </script>
+                <!--otro para los extras-->
+                <script>
+                    // No todo se resuelve con pie, doughthout o barras, a veces se necesitan otros gráficos
+
+
+                        //el fetch
+
+                        //Gráfico de dispersión
+                        //Para evidenciar si existe una relación o correlación entre las dos variables
+
+                        //Gráfico de burbujas
+                        //Para analizar patrones o correlaciones de dos valores, considerando un tercer valor que se presenta en su radio
+
+                </script>
+
+    </body>
+</html>
