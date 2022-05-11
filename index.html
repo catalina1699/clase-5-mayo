@@ -197,31 +197,8 @@
 
 
                         //consultando en cada elemento del arreglo
-                        data.forEach((d) => {
-                            //separo sexos
-                            if (d.Sex == "female") {
-                                female = female + 1;
-                            } else {
-                                male = male + 1;
-                            }
-                            //calculo clases
-
-                            //calculo sobrevivientes
-
-                            //Sobrevivientes por sexo
-
-
-                            //vivos o muertos por clase
-
-
-                            //vivos o muertos por edad y sexo
-
-
-
-                        //y completemos un par de frase
-
-
-                        //gráficar edadesreales
+                       
+                        //gráficar 
 
 
                         new Chart(document.getElementById("primerCan").getContext("2d"), {
@@ -238,75 +215,11 @@
                             },
                         });
 
-                        //hombres y mujeres
-                        new Chart(document.getElementById("s").getContext("2d"), {
-                            type: "doughnut",
-                            data: {
-                                labels: [],
-                                datasets: [{ data: [mujeres, hombres], label: "Sexo", backgroundColor: ["#8856a7", "#495F8F"] }],
-                            },
-                            options: {
-                                animation: false,
-                                layout: {
-                                    padding: 10,
-                                },
-                            },
-                        });
-
-                        // clases
-                        new Chart(document.getElementById("clasista").getContext("2d"), {
-                            type: "doughnut",
-                            data: {
-                                labels: ["Primera clase", "Segunda clase", "Tercera clase"],
-                                datasets: [{ data: [cuantosPrimera, cuantosSegunda, cuantosTercera], label: "Clases titanic", backgroundColor: ["#D9B4B2", "#9EBCDA", "#495F8F"] }],
-                            },
-                            options: {
-                                animation: false,
-                                layout: {
-                                    padding: 10,
-                                },
-                            },
-                        });
-
-                        //sobrevivientes y muertes por clase
-                        new Chart(document.getElementById("sobreviven").getContext("2d"), {
-                            type: "bar",
-                            data: {
-                                labels: ["Primera clase", "Segunda Clase", "Tercera Clase"],
-                                datasets: [
-                                    { data: [vivosPrimera, vivosSegunda, vivosTercera], label: "Sobreviven", backgroundColor: ["#8CB1E5"] },
-                                    { data: [muertosPrimera, muertosSegunda, muertosTercera], label: "Mueren", backgroundColor: ["#334"] },
-                                ],
-                            },
-                            options: {
-                                indexAxis: "y",
-                                animation: false,
-                                layout: {
-                                    padding: 10,
-                                },
-                            },
-                        });
-
-                        //sobrevivientes y muertes por edad y sexo (mujeres y niños primero)
-                        new Chart(document.getElementById("porsexo").getContext("2d"), {
-                            type: "bar",
-                            data: {
-                                labels: ["Mujeres", "Niños", "Hombres"],
-                                datasets: [
-                                    { data: [mujeresSalvadas, ninesSalvades, hombresSalvados], label: "Sobreviven", backgroundColor: ["#8CB1E5"] },
-                                    { data: [mujeresMuertas, ninesMuertes, hombresMuertos], label: "Mueren", backgroundColor: ["#334"] },
-                                ],
-                            },
-                            options: {
-                                indexAxis: "y",
-                                animation: false,
-                                layout: {
-                                    padding: 10,
-                                },
-                            },
-                        });
                     })
                     todo().catch((error) => console.error(error));
-                </script>                   
+                </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
     </body>
 </html>
