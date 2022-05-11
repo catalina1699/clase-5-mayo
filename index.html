@@ -166,6 +166,20 @@
         ></script>
         <!-- Un gran script, que contiene una función asincrónica para ir a buscar un JSON con -->
         <script>
+            
+                      new Chart(document.getElementById("primerCan").getContext("2d"), {
+                    type: "pie",
+                    data: {
+                        labels: ["blanco", "latino", "afroamericano", "asiatico", "nativo americano", "dos o mas grupos"],
+                        datasets: [{ data: [31, 29, 20, 16, 1, 3], label: "composicion de la poblacion de nyc", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7", "#34147f"] }],
+                    },
+                    options: {
+                        animation: false,
+                        layout: {
+                            padding: 10,
+                        },
+                    },
+                });
             async function todo() {
                 //el fetch
                 const consulta = await fetch("https://raw.githubusercontent.com/catalina1699/json_clase8/main/datos.json");
@@ -201,19 +215,7 @@
 
                 //gráficar
 
-                new Chart(document.getElementById("primerCan").getContext("2d"), {
-                    type: "pie",
-                    data: {
-                        labels: ["blanco", "latino", "afroamericano", "asiatico", "nativo americano", "dos o mas grupos"],
-                        datasets: [{ data: [31, 29, 20, 16, 1, 3], label: "composicion de la poblacion de nyc", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7", "#34147f"] }],
-                    },
-                    options: {
-                        animation: false,
-                        layout: {
-                            padding: 10,
-                        },
-                    },
-                });
+      
             }
         </script>
 
