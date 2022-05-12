@@ -159,7 +159,7 @@
        
         <!-- Un gran script, que contiene una función asincrónica para ir a buscar un JSON con -->
         <script>
-            async function todo() {
+            async function visualizacion() {
                 //el fetch
                 const consulta = await fetch("https://raw.githubusercontent.com/catalina1699/json_clase8/main/datos.json");
                 const data = await consulta.json();
@@ -293,6 +293,7 @@
                     },
                 });
             }
+            visualizacion().catch((error) => console.error(error));
         </script>
 
     </body>
