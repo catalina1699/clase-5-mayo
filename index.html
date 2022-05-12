@@ -67,7 +67,7 @@
                         <div class="accordion-body text-black-50">
                             <p>Of the total population of NYC a total of 570,000 self-identify as gay or bisexual</p>
                             <div class="col-md-6 mx-auto mb-3">
-                                <canvas id="segundoCab" width="100" height="100"></canvas>
+                                <canvas id="segundoCan" width="100" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <div class="accordion-body text-black-50">
                             <p>These are the diferent groups who are targeted by Hate Crimes, each group is targetes in a different extent</p>
                             <div class="col-md-6 mx-auto mb-3">
-                                <canvas id="victims" width="100" height="100"></canvas>
+                                <canvas id="tercerCan" width="100" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             <p>
                                 The information of the perpetrators is organized by age groups.
                             </p>
-                            <canvas id="age" width="100" height="30"></canvas>
+                            <canvas id="cuartoCan" width="100" height="30"></canvas>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>The information of the perpetrators is organized by genre.</p>
-                            <canvas id="genre" width="100" height="30"></canvas>
+                            <canvas id="quintoCan" width="100" height="30"></canvas>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>The information of the perpetrators is ordered by ethnicities</p>
-                            <canvas id="last" width="100" height="50"></canvas>
+                            <canvas id="sextoCan" width="100" height="50"></canvas>
                         </div>
                     </div>
                 </div>
@@ -174,8 +174,7 @@
                 var lasMujeres = 0;
                 var losHombres = 0;
                 //Grupos atacados
-                var lesLGBT = 0;
-                var lesTrans = 0;
+                var lesLGBT = 0;          
                 var lesJudios = 0;
                 var lesAfroamericanos = 0;
                 var lesAapi = 0;
@@ -220,6 +219,8 @@
                     } else if (d.BiasMotivation == "ANTIMALE_HOMOSEXUAL") {
                         lesLGBT = lesLGBT + 1;
                     } else if (d.BiasMotivation == "ANTI_LGBT") {
+                        lesLGBT = lesLGBT + 1;
+                    } else if (d.BiasMotivation == "ANTITRANSGENDER") {
                         lesLGBT = lesLGBT + 1;
                     } else if (d.BiasMotivation == "ANTIWHITE") {
                         lesBlancos = lesBlancos + 1;
@@ -269,7 +270,7 @@
                     type: "pie",
                     data: {
                         labels: ["blanco", "latino", "afroamericano", "asiatico", "nativo americano", "dos o mas grupos"],
-                        datasets: [{ data: [31, 29, 20, 16, 1, 3], label: "composicion de la poblacion de nyc", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7", "#34147f"] }],
+                        datasets: [{ data: [31, 29, 20, 16, 1, 3], label: "Composicion de la poblacion de nyc", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7", "#34147f"] }],
                     },
                     options: {
                         animation: false,
@@ -278,11 +279,12 @@
                         },
                     },
                 });
-                new Chart(document.getElementById("primerChart").getContext("2d"), {
-                  type: "pie",
+                //victimas
+                new Chart(document.getElementById("tercerCan").getContext("2d"), {
+                  type: "bar",
                   data: {
-                      labels: ["Drama", "Comedia", "Otros géneros"],
-                      datasets: [{ data: [generoDrama, generoComedia, generoEtc], label: "Total", backgroundColor: ["#f00", "#00f", "#0ff"] }],
+                      labels: ["personas asiaticas", "personas negras", "mujeres", "personas musulmanes", "personas judias", "personas lgbt", "personas blancas", "Otros"],
+                      datasets: [{ data: [lesAapi, lesAfroamericanos, lesMujeres, lesMusulmanes, lesJudios, lesLGBT, lesBlancos, lesOtres], label: "Total", backgroundColor: ["#ffb224", "#ffc252", "#bc8e52", "#c7a170", "#dec8ab", "#eadbc8", "#faf0e6", "#ffebcd"] }],
                   },
                   options: {
                       animation: false,
