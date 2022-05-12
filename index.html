@@ -174,7 +174,7 @@
                 var lasMujeres = 0;
                 var losHombres = 0;
                 //Grupos atacados
-                var lesLGBT = 0;          
+                var lesLGBT = 0;
                 var lesJudios = 0;
                 var lesAfroamericanos = 0;
                 var lesAapi = 0;
@@ -195,7 +195,6 @@
                 var negrx = 0;
                 var latinx = 0;
                 var asiaticx = 0;
-                
 
                 //consultando en cada elemento del arreglo
                 data.forEach((d) => {
@@ -204,7 +203,7 @@
                         losHombres = losHombres + 1;
                     } else {
                         lasMujeres = lasMujeres + 1;
-                    };
+                    }
                     //grupos atacados
                     if (d.BiasMotivation == "ANTIASIAN") {
                         lesAapi = lesAapi + 1;
@@ -226,15 +225,15 @@
                         lesBlancos = lesBlancos + 1;
                     } else {
                         lesOtres = lesOtres + 1;
-                    };
+                    }
                     //grupos atacadores edad
-                     if (d.AgeGroup == "10_20") {
+                    if (d.AgeGroup == "10_20") {
                         menorDeEdad = menorDeEdad + 1;
                     } else if (d.AgeGroup == "20_30") {
                         veinteAnos = veinteAnos + 1;
                     } else if (d.AgeGroup == "30_30") {
                         treintaAnos = treintaAnos + 1;
-                    }else if (d.AgeGroup == "30_40") {
+                    } else if (d.AgeGroup == "30_40") {
                         treintaAnos = treintaAnos + 1;
                     } else if (d.AgeGroup == "40_40") {
                         cuarentaAnos = cuarentaAnos + 1;
@@ -244,13 +243,13 @@
                         cincuentaAnos = cincuentaAnos + 1;
                     } else if (d.AgeGroup == "50_60") {
                         cincuentaAnos = cincuentaAnos + 1;
-                    }else if (d.AgeGroup == "60_60") {
+                    } else if (d.AgeGroup == "60_60") {
                         sesentaAnos = sesentaAnos + 1;
                     } else if (d.AgeGroup == "60_70") {
                         sesentaAnos = sesentaAnos + 1;
                     } else {
                         setentaAnos = setentaAnos + 1;
-                    };
+                    }
                     //atacadores etnia
                     if (d.Race == "WHITE") {
                         blancx = blancx + 1;
@@ -262,7 +261,7 @@
                         latinx = latinx + 1;
                     } else if (d.Race == "ASIAN_PACIFIC_ISLANDER") {
                         asiaticx = asiaticx + 1;
-                    } 
+                    }
                 });
                 //gráficar
                 //poblacion nueva york
@@ -281,18 +280,24 @@
                 });
                 //victimas
                 new Chart(document.getElementById("tercerCan").getContext("2d"), {
-                  type: "bar",
-                  data: {
-                      labels: ["personas asiaticas", "personas negras", "mujeres", "personas musulmanes", "personas judias", "personas lgbt", "personas blancas", "Otros"],
-                      datasets: [{ data: [lesAapi, lesAfroamericanos, lesMujeres, lesMusulmanes, lesJudios, lesLGBT, lesBlancos, lesOtres], label: "Total", backgroundColor: ["#ffb224", "#ffc252", "#bc8e52", "#c7a170", "#dec8ab", "#eadbc8", "#faf0e6", "#ffebcd"] }],
-                  },
-                  options: {
-                      animation: false,
-                      layout: {
-                          padding: 10,
-                      },
-                  },
-              });
+                    type: "bar",
+                    data: {
+                        labels: ["personas asiaticas", "personas negras", "mujeres", "personas musulmanes", "personas judias", "personas lgbt", "personas blancas", "Otros"],
+                        datasets: [
+                            {
+                                data: [lesAapi, lesAfroamericanos, lesMujeres, lesMusulmanes, lesJudios, lesLGBT, lesBlancos, lesOtres],
+                                label: "Total",
+                                backgroundColor: ["#ffb224", "#ffc252", "#bc8e52", "#c7a170", "#dec8ab", "#eadbc8", "#faf0e6", "#ffebcd"],
+                            },
+                        ],
+                    },
+                    options: {
+                        animation: false,
+                        layout: {
+                            padding: 10,
+                        },
+                    },
+                });
             }
         </script>
 
