@@ -196,7 +196,7 @@
                 var negrx = 0;
                 var latinx = 0;
                 var asiaticx = 0;
-                var nativxAmericanx = 0;
+                
 
                 //consultando en cada elemento del arreglo
                 data.forEach((d) => {
@@ -231,25 +231,37 @@
                         menorDeEdad = menorDeEdad + 1;
                     } else if (d.AgeGroup == "20_30") {
                         veinteAnos = veinteAnos + 1;
-                    }else if (d.AgeGroup == "30_30") {
+                    } else if (d.AgeGroup == "30_30") {
                         treintaAnos = treintaAnos + 1;
                     }else if (d.AgeGroup == "30_40") {
                         treintaAnos = treintaAnos + 1;
-                    }else if (d.AgeGroup == "40_40") {
+                    } else if (d.AgeGroup == "40_40") {
                         cuarentaAnos = cuarentaAnos + 1;
-                    }else if (d.AgeGroup == "40_50") {
+                    } else if (d.AgeGroup == "40_50") {
                         cuarentaAnos = cuarentaAnos + 1;
-                    }else if (d.AgeGroup == "50_50") {
+                    } else if (d.AgeGroup == "50_50") {
                         cincuentaAnos = cincuentaAnos + 1;
-                    }else if (d.AgeGroup == "50_60") {
+                    } else if (d.AgeGroup == "50_60") {
                         cincuentaAnos = cincuentaAnos + 1;
                     }else if (d.AgeGroup == "60_60") {
                         sesentaAnos = sesentaAnos + 1;
-                    }else if (d.AgeGroup == "60_70") {
+                    } else if (d.AgeGroup == "60_70") {
                         sesentaAnos = sesentaAnos + 1;
-                    }else {
+                    } else {
                         setentaAnos = setentaAnos + 1;
                     };
+                    //atacadores etnia
+                    if (d.Race == "WHITE") {
+                        blancx = blancx + 1;
+                    } else if (d.Race == "BLACK") {
+                        negrx = negrx + 1;
+                    } else if (d.Race == "WHITE_HISPANIC") {
+                        latinx = latinx + 1;
+                    } else if (d.Race == "BLACK_HISPANIC") {
+                        latinx = latinx + 1;
+                    } else if (d.Race == "ASIAN_PACIFIC_ISLANDER") {
+                        asiaticx = asiaticx + 1;
+                    } 
                 });
                 //gráficar
                 //poblacion nueva york
